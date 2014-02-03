@@ -42,7 +42,9 @@
       (.addFirst buf itm)))
   clojure.lang.Counted
   (count [this]
-    (.size buf)))
+    (.size buf))
+  (compatible? [this]
+    true))
 
 (defn dropping-buffer [n]
   (DroppingBuffer. (LinkedList.) n))
@@ -60,7 +62,9 @@
     (.addFirst buf itm))
   clojure.lang.Counted
   (count [this]
-    (.size buf)))
+    (.size buf))
+  (compatible? [this]
+    true))
 
 (defn sliding-buffer [n]
   (SlidingBuffer. (LinkedList.) n))
